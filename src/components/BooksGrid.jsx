@@ -13,7 +13,6 @@ export const BooksGrid = () => {
       })
 
     }, [])
-    console.log(books.map(book => book))
 
   return (
     <>
