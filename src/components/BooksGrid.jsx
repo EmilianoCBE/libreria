@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Row, Col } from "antd";
+import { BookItem } from './BookItem';
 
 export const BooksGrid = () => {
   const [books, setBooks] = useState([])
@@ -10,13 +11,16 @@ export const BooksGrid = () => {
       .then((data) => {
         setBooks(data.library)
       })
-  }, [])
+
+    }, [])
+    console.log(books.map(book => book))
 
   return (
     <>
       <Row gutter={{ xs: [8, 8], sm: [16, 16], md: [24, 24], lg: [24, 24] }}>
         {
           books.map((book, index) => (
+            
             <Col
               xs={12}
               sm={12}
@@ -26,10 +30,8 @@ export const BooksGrid = () => {
               }}
               key={index}
             >
-              <div>
-                <h3>{book.book.title}</h3>
-                <img src={book.book.cover} alt={book.book.title} width={200}/>
-              </div>
+              
+              <BookItem {...book}/>
             </Col>
           ))
         }

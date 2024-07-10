@@ -1,3 +1,15 @@
 .layout-container {
   display: flex;
 }
+
+.layout-grid {
+  width: 60%;
+}
+
+.layout-list {
+  width: 40%;
+}
+
+.layout-list.hidden {
+  display: none;
+}

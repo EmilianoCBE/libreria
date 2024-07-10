@@ -1,6 +1,8 @@
 
 export const BooksList = () => {
   return (
-    <div>BooksList</div>
+    <div>
+      <h2>Lista de Lectura</h2>
+    </div>
   )
 }
