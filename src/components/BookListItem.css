@@ -1,0 +1,8 @@
+.booklist-item {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.booklist-item:hover {
+  transform: scale(1.05);
+}

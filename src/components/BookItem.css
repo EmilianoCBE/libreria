@@ -6,3 +6,12 @@
 .book-item:hover {
   transform: scale(1.05);
 }
+
+.book-item.selected {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.book-item.selected:hover {
+  transform: none;
+}
