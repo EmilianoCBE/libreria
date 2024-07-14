@@ -3,13 +3,14 @@ import './BookItem.css'
 import { LectureList } from '../App'
 
 export const BookItem = (book) => {
-  const {lectureList, setLectureList, setList} = useContext(LectureList)
+  const {lectureList, setLectureList, setList, setListCount} = useContext(LectureList)
   const bookExists = lectureList.find((item) => item.title === book.book.title)
 
   const addLectureList = () => {
     if (bookExists) return
     setLectureList([...lectureList, book.book])
     setList(true)
+    setListCount(lectureList.length + 1)
   }
 
   return (

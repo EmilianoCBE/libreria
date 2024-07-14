@@ -7,8 +7,8 @@ export const LectureList = createContext()
 function App() {
   const [list, setList] = useState(false)
   const [lectureList, setLectureList] = useState([])
-  const [booksCount, setBooksCount] = useState()
-  const [listCount, setListCount] = useState()
+  const [booksCount, setBooksCount] = useState(0)
+  const [listCount, setListCount] = useState(0)
 
   return (
     <LectureList.Provider value={{

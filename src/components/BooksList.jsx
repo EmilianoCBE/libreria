@@ -4,23 +4,7 @@ import { useContext } from "react"
 import { BookListItem } from "./BookListItem"
 
 export const BooksList = () => {
-  const {lectureList, listCount, setListCount} = useContext(LectureList)
-
-  // useEffect(() => {
-  //   fetch('/src/data/books.json')
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setBooksCount(data.library.length)
-  //       if (filter === 'all') {
-  //         return setBooks(data.library)
-  //       } else {
-  //         const filteredBooks = data.library.filter((book) => book.book.genre === filter)
-  //         setBooks(filteredBooks)
-  //         setBooksCount(filteredBooks.length)
-  //       }
-  //     })
-
-  // }, [filter])
+  const {lectureList, listCount} = useContext(LectureList)
 
   return (
     <>
