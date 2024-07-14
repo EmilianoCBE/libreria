@@ -1,18 +1,25 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Row, Col } from "antd";
 import { BookItem } from './BookItem';
+import { LectureList } from '../App';
 
 export const BooksGrid = () => {
   const [books, setBooks] = useState([])
   const [filter, setFilter] = useState('all')
+  const {booksCount, setBooksCount} = useContext(LectureList)
 
     useEffect(() => {
       fetch('/src/data/books.json')
         .then((response) => response.json())
         .then((data) => {
-          if (filter === 'all') return setBooks(data.library)
-          const filteredBooks = data.library.filter((book) => book.book.genre === filter)
-          setBooks(filteredBooks)
+          setBooksCount(data.library.length)
+          if (filter === 'all') {
+            return setBooks(data.library)
+          } else {
+            const filteredBooks = data.library.filter((book) => book.book.genre === filter)
+            setBooks(filteredBooks)
+            setBooksCount(filteredBooks.length)
+          }
         })
 
     }, [filter])
@@ -23,6 +30,7 @@ export const BooksGrid = () => {
 
   return (
     <>
+      <h3>Books Avaiable: {booksCount}</h3>
       <select
         value={filter}
         onChange={(e) => setFilterBooks(e.target.value)}

@@ -4,11 +4,28 @@ import { useContext } from "react"
 import { BookListItem } from "./BookListItem"
 
 export const BooksList = () => {
-  const {lectureList} = useContext(LectureList)
+  const {lectureList, listCount, setListCount} = useContext(LectureList)
+
+  // useEffect(() => {
+  //   fetch('/src/data/books.json')
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setBooksCount(data.library.length)
+  //       if (filter === 'all') {
+  //         return setBooks(data.library)
+  //       } else {
+  //         const filteredBooks = data.library.filter((book) => book.book.genre === filter)
+  //         setBooks(filteredBooks)
+  //         setBooksCount(filteredBooks.length)
+  //       }
+  //     })
+
+  // }, [filter])
 
   return (
-    <div>
-      <h2>Lista de Lectura</h2>
+    <>
+      <h2>Lecture List</h2>
+      <h3>Books on Lecture List: {listCount}</h3>
       <Row gutter={{ xs: [8, 8], sm: [16, 16], md: [24, 24], lg: [24, 24] }}>
         {
           lectureList.map((book, index) => (
@@ -26,6 +43,6 @@ export const BooksList = () => {
           ))
         }
       </Row>
-    </div>
+    </>
   )
 }

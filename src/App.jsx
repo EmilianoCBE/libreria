@@ -7,15 +7,21 @@ export const LectureList = createContext()
 function App() {
   const [list, setList] = useState(false)
   const [lectureList, setLectureList] = useState([])
+  const [booksCount, setBooksCount] = useState()
+  const [listCount, setListCount] = useState()
 
   return (
     <LectureList.Provider value={{
       list,
       setList,
       lectureList,
-      setLectureList
+      setLectureList,
+      booksCount,
+      setBooksCount,
+      listCount,
+      setListCount
     }}>
-      <h1>Librería Fantasía</h1>
+      <h1>Bookstore</h1>
 
       <BooksLayout />
     </LectureList.Provider>
