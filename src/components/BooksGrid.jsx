@@ -22,7 +22,7 @@ export const BooksGrid = () => {
           }
         })
 
-    }, [filter])
+    }, [filter, setBooksCount])
 
     const setFilterBooks = (filter) => {
       setFilter(filter)

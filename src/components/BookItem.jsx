@@ -4,10 +4,10 @@ import { LectureList } from '../App'
 
 export const BookItem = (book) => {
   const {lectureList, setLectureList, setList, setListCount} = useContext(LectureList)
-  const bookExists = lectureList.find((item) => item.title === book.book.title)
+  const bookExistsInLectureList = lectureList.find((item) => item.title === book.book.title)
 
   const addLectureList = () => {
-    if (bookExists) return
+    if (bookExistsInLectureList) return
     setLectureList([...lectureList, book.book])
     setList(true)
     setListCount(lectureList.length + 1)
@@ -15,7 +15,7 @@ export const BookItem = (book) => {
 
   return (
     <div className={
-      bookExists ? "book-item selected" : "book-item"
+      bookExistsInLectureList ? "book-item selected" : "book-item"
     } onClick={addLectureList}>
       <h3>{book.book.title}</h3>
       <img src={book.book.cover} alt={book.book.title} width={200}/>
