@@ -6,7 +6,6 @@ import { BookListItem } from "./BookListItem"
 export const BooksList = () => {
   const {lectureList} = useContext(LectureList)
 
-  console.log(lectureList)
   return (
     <div>
       <h2>Lista de Lectura</h2>

@@ -11,6 +11,7 @@
   width: 35%;
   border: 2px solid #e1e1e1;
   border-radius: 8px;
+  padding: 16px 8px 20px;
 }
 
 .layout-list.hidden {

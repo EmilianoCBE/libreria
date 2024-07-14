@@ -3,12 +3,12 @@ import { LectureList } from '../App';
 import './BookListItem.css';
 
 export const BookListItem = (book) => {
-  const {lectureList, setLectureList} = useContext(LectureList)
+  const {lectureList, setLectureList, setList} = useContext(LectureList)
   const unlistBook = lectureList.filter((item) => item.title !== book.title)
 
   const subLectureList = () => {
-    console.log(unlistBook)
     setLectureList(unlistBook)
+    lectureList.length === 1 && setList(false)
   }
 
   return (
