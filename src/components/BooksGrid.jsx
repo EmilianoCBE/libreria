@@ -22,6 +22,8 @@ export const BooksGrid = () => {
 
         setBooks(filteredBooks);
         setBooksCount(availableBooksCount);
+        // localStorage.setItem('lectureList', JSON.stringify(lectureList));
+      
       });
   }, [filter, lectureList, setBooksCount]);
 

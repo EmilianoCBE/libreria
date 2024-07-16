@@ -8,7 +8,12 @@ function App() {
   const [list, setList] = useState(false)
   const [lectureList, setLectureList] = useState([])
   const [booksCount, setBooksCount] = useState(0)
-  const [listCount, setListCount] = useState(0)
+  const [listCount, setListCount] = useState(() =>{
+      const saved = localStorage.getItem('lectureList')
+      const initialValue = JSON.parse(saved)
+      return initialValue || []
+    }
+  )
 
   return (
     <LectureList.Provider value={{
