@@ -9,7 +9,7 @@ export const BooksGrid = () => {
   const { booksCount, setBooksCount, lectureList } = useContext(LectureList);
 
   useEffect(() => {
-    fetch('/src/data/books.json')
+    fetch('../data/books.json')
       .then((response) => response.json())
       .then((data) => {
         let filteredBooks = data.library;
